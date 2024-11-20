@@ -101,6 +101,7 @@ const submitForm = async (formEl: FormInstance, formData: object, endpoint: stri
         store.addResult({ id: data.id, message: data.message })
         alert(`Успешно отправлено: ${data.message}`)
       } catch (error: unknown) {
+        // @ts-expect-error type error?
         alert('Ошибка отправки: ' + error.message)
       }
     }
